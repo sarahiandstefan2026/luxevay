@@ -206,4 +206,136 @@
     .top-link { display: none; }
     h1 .ln { display: inline; white-space: normal; }
     .hero { grid-template-columns: 1fr; min-height: 0; }
-    .hero-copy { padding: 24px
+    .hero-copy { padding: 24px var(--pad) 48px; }
+    .signup { flex-direction: column; align-items: stretch; }
+    .signup input[type="email"], .btn { height: 54px; justify-content: center; }
+    .sketch { aspect-ratio: 1 / 1; }
+    .perks { grid-template-columns: 1fr; gap: 26px; }
+    .road { grid-template-columns: 1fr; gap: 0; }
+    .steps { margin-top: 40px; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .btn svg { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="wordmark" href="#top" id="top" aria-label="Luxevay">Luxevay</a>
+  <a class="top-link" href="#join">Join the Founding Circle</a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="label">Coming soon</p>
+      <h1><span class="ln">Beautiful gym</span> <span class="ln">essentials, designed for</span> <span class="ln">the way you <em>actually</em></span> <span class="ln">move through your day.</span></h1>
+      <p class="lede">Be first in. Join the Founding Circle.</p>
+
+      <!-- KIT FORM #1 (form ID 10120263) -->
+      <form class="signup" action="https://app.kit.com/forms/10120263/subscriptions" method="post">
+        <input type="email" name="email_address" placeholder="your email" aria-label="Your email" required>
+        <button class="btn" type="submit">Join the Founding Circle
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+        </button>
+      </form>
+      <p class="fine">No spam. Just launch news and first dibs.</p>
+    </div>
+
+    <div class="sketch" role="img" aria-label="Concept sketch of the Active Mini bag. Color? Size? Your vote.">
+      <p class="label">Concept sketch</p>
+      <svg viewBox="0 0 827 826" preserveAspectRatio="xMidYMid meet" fill="none" stroke="#732729" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- handles -->
+        <path d="M328 375 V350 Q328 318 364 318 Q400 318 400 350 V375"/>
+        <path d="M339 375 V352 Q339 328 364 328 Q389 328 389 352 V375" stroke-width="1.4"/>
+        <path d="M430 375 V350 Q430 318 465 318 Q500 318 500 350 V375"/>
+        <path d="M441 375 V352 Q441 328 465 328 Q489 328 489 352 V375" stroke-width="1.4"/>
+        <!-- body -->
+        <path d="M275 375 H555 Q635 375 635 458 Q635 542 560 542 H275 Q197 542 197 458 Q197 375 275 375 Z"/>
+        <path d="M262 394 H565" stroke-dasharray="6 6" stroke-width="1.4"/>
+        <!-- strap -->
+        <path d="M205 462 C150 505 138 560 198 598 C262 628 430 628 530 585 C585 560 626 512 633 462"/>
+        <path d="M211 470 C172 508 168 556 214 584 C272 608 425 604 522 566 C566 548 604 518 617 486" stroke-width="1.4"/>
+        <!-- clips -->
+        <circle cx="200" cy="457" r="6.5" stroke="#B8935E" stroke-width="2.6"/>
+        <circle cx="630" cy="457" r="6.5" stroke="#B8935E" stroke-width="2.6"/>
+        <!-- arrow -->
+        <path d="M572 270 C586 300 580 335 560 358" stroke-width="1.6"/>
+        <path d="M557 340 L560 360 L577 350" stroke-width="1.6"/>
+        <text x="491" y="258" fill="#49171A" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-weight="500" font-size="26">color? size? your vote.</text>
+      </svg>
+      <p class="cap">The Active Mini, early direction. The final bag may differ.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDING CIRCLE -->
+  <section class="circle">
+    <p class="label gold">The Founding Circle</p>
+    <h2>When you join, you get</h2>
+    <ol class="perks">
+      <li><span class="n">01</span><p><em>First access</em> to the Active Mini drop, before it opens to the public.</p></li>
+      <li><span class="n">02</span><p>A <em>founding-member price</em>, locked in before launch pricing.</p></li>
+      <li><span class="n">03</span><p>A <em>vote on what's next</em>: colors, sizes, what joins the lineup.</p></li>
+      <li><span class="n">04</span><p><em>Behind-the-scenes looks</em> as the bag goes from sketch to sample.</p></li>
+    </ol>
+  </section>
+
+  <!-- ROAD TO LAUNCH -->
+  <section class="road">
+    <div>
+      <p class="label">The road to launch</p>
+      <h2>From sketch to sample.</h2>
+      <p class="sub">Founding members see every step.</p>
+    </div>
+    <ol class="steps">
+      <li class="step now"><b>Sketch</b><span class="pill">WE'RE HERE</span></li>
+      <li class="step"><b>Sample</b></li>
+      <li class="step"><b>Launch</b></li>
+    </ol>
+  </section>
+
+  <!-- FINAL SIGNUP -->
+  <section class="final" id="join">
+    <h2>Be first in. Join the Founding Circle.</h2>
+    <!-- KIT FORM #2 (form ID 10120263) -->
+    <form class="signup" action="https://app.kit.com/forms/10120263/subscriptions" method="post">
+      <input type="email" name="email_address" placeholder="your email" aria-label="Your email" required>
+      <button class="btn" type="submit">Join the Founding Circle
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+      </button>
+    </form>
+    <p class="fine">No spam. Just launch news and first dibs.</p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <span class="wordmark">Luxevay</span>
+    <small>© 2026 Luxevay LLC</small>
+  </div>
+  <nav aria-label="Social">
+    <!-- replace # with your real profile links -->
+    <a href="#" rel="noopener">Instagram</a>
+    <a href="#" rel="noopener">TikTok</a>
+  </nav>
+</footer>
+
+<script>
+  // After signing up, Kit sends people back to  yourdomain.com/?joined=1
+  if (new URLSearchParams(location.search).get('joined') === '1') {
+    document.querySelectorAll('.signup').forEach(function (form) {
+      var note = document.createElement('p');
+      note.className = 'thanks';
+      note.innerHTML = 'You\u2019re in. <small>Check your email to confirm your spot in the Founding Circle.</small>';
+      var fine = form.nextElementSibling;
+      if (fine && fine.classList.contains('fine')) fine.remove();
+      form.replaceWith(note);
+    });
+  }
+</script>
+</body>
+</html>
