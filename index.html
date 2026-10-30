@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luxevay — Coming Soon</title>
+<meta name="description" content="Beautiful gym essentials, designed for the way you actually move through your day. Join the Founding Circle for first access.">
+<meta property="og:title" content="Luxevay — Coming Soon">
+<meta property="og:description" content="Beautiful gym essentials, designed for the way you actually move through your day.">
+<meta name="theme-color" content="#F0EEE2">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --egret: #F0EEE2;
+    --dahlia: #732729;
+    --ice: #C0D4EC;
+    --oxblood: #49171A;
+    --gold: #C9A97A;
+    --field: #FBF9F4;
+    --ink: #3b2a2b;
+    --pad: clamp(24px, 5.6vw, 88px);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Manrope", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--egret);
+    color: var(--oxblood);
+    font-family: var(--sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  /* ---------- shared bits ---------- */
+  .label {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .label::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+  .label.gold { color: var(--gold); }
+  .label.gold::before { display: none; }
+
+  .signup { display: flex; gap: 10px; align-items: center; }
+  .signup input[type="email"] {
+    flex: 1 1 auto; min-width: 0;
+    height: 46px; padding: 0 22px;
+    border: 1px solid var(--dahlia); border-radius: 999px;
+    background: var(--field); color: var(--oxblood);
+    font: 400 0.9375rem var(--sans);
+    outline-offset: 3px;
+  }
+  .signup input::placeholder { color: #6f5d5d; }
+  .btn {
+    flex: 0 0 auto;
+    height: 46px; padding: 0 26px;
+    border: 0; border-radius: 999px;
+    background: var(--dahlia); color: var(--egret);
+    font: 600 0.875rem var(--sans);
+    display: inline-flex; align-items: center; gap: 10px;
+    cursor: pointer; white-space: nowrap;
+    transition: background .2s ease, transform .2s ease;
+  }
+  .btn:hover { background: var(--oxblood); }
+  .btn svg { width: 14px; height: 14px; transition: transform .2s ease; }
+  .btn:hover svg { transform: translateX(3px); }
+  .fine { font-size: 0.75rem; color: #5a4647; margin-top: 14px; }
+
+  .thanks { font-family: var(--serif); font-weight: 500; font-size: clamp(1.4rem, 2.2vw, 1.9rem); line-height: 1.25; color: var(--dahlia); }
+  .thanks small { display: block; margin-top: 8px; font: 400 0.8125rem var(--sans); color: #5a4647; }
+  .final .thanks { max-width: 22em; margin: 0 auto; }
+
+  /* ---------- header ---------- */
+  .top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 var(--pad); height: 62px;
+  }
+  .wordmark {
+    font-family: var(--serif); font-weight: 500;
+    letter-spacing: 0.34em; font-size: 1.0625rem; text-transform: uppercase;
+    color: var(--dahlia); text-decoration: none;
+  }
+  .top-link {
+    font-weight: 500; font-size: 0.625rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--oxblood); text-decoration: none;
+    padding-bottom: 5px; border-bottom: 1px solid var(--gold);
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    display: grid; grid-template-columns: minmax(0, 1.056fr) minmax(0, 1fr);
+    min-height: clamp(440px, 48vw, 740px);
+  }
+  .hero-copy {
+    padding: 0 clamp(24px, 4vw, 64px) 0 var(--pad);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .hero-copy .label { color: var(--dahlia); margin-bottom: 26px; }
+  .hero-copy .label::before { background: var(--gold); width: 28px; }
+  h1 {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+    line-height: 1.08; letter-spacing: -0.005em;
+    color: var(--dahlia); margin-bottom: 30px;
+  }
+  h1 em { font-style: italic; }
+  h1 .ln { display: block; white-space: nowrap; }
+  .lede { font-weight: 500; font-size: 0.9375rem; color: var(--oxblood); margin-bottom: 18px; }
+  .hero .signup { max-width: 460px; }
+
+  .sketch {
+    position: relative; background-color: var(--ice);
+    background-image:
+      linear-gradient(rgba(115,39,41,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(115,39,41,.07) 1px, transparent 1px);
+    background-size: 38px 38px;
+    overflow: hidden;
+  }
+  .sketch .label { position: absolute; top: 22px; left: 22px; color: var(--oxblood); font-size: 0.625rem; }
+  .sketch .label::before { width: 22px; }
+  .sketch svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .sketch .cap {
+    position: absolute; left: 22px; bottom: 22px;
+    font-size: 0.6875rem; color: var(--oxblood);
+  }
+
+  /* ---------- founding circle ---------- */
+  .circle { background: var(--dahlia); color: var(--egret); padding: clamp(56px, 7vw, 104px) var(--pad); }
+  .circle h2 {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(2rem, 3.8vw, 3.25rem); line-height: 1.1;
+    margin: 18px 0 clamp(36px, 5vw, 72px);
+  }
+  .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; list-style: none; }
+  .perks li { border-top: 1px solid rgba(240,238,226,.28); padding-top: 22px; }
+  .perks .n { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1.125rem; display: block; margin-bottom: 16px; }
+  .perks p { font-family: var(--serif); font-weight: 500; font-size: clamp(1.15rem, 1.7vw, 1.5rem); line-height: 1.3; }
+  .perks em { font-style: italic; }
+
+  /* ---------- road to launch ---------- */
+  .road {
+    background: var(--ice); color: var(--oxblood);
+    padding: clamp(56px, 7vw, 100px) var(--pad);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
+  .road h2 {
+    font-family: var(--serif); font-weight: 500;
+    font-size: clamp(2.25rem, 4.6vw, 4rem); line-height: 1.04;
+    margin: 20px 0 22px; max-width: 8.5em;
+  }
+  .road .sub { font-size: 0.9375rem; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; list-style: none; margin-top: 52px; }
+  .step { position: relative; padding-top: 22px; }
+  .step::before { content: ""; position: absolute; top: 5px; left: 0; right: 0; height: 1px; background: var(--dahlia); }
+  .step::after {
+    content: ""; position: absolute; top: 0; left: 0; width: 11px; height: 11px; border-radius: 50%;
+    border: 1px solid var(--dahlia); background: var(--ice);
+  }
+  .step.now::after { background: var(--dahlia); }
+  .step b { font-family: var(--serif); font-weight: 500; font-size: clamp(1.35rem, 2vw, 1.85rem); display: block; }
+  .pill {
+    display: inline-block; margin-top: 14px;
+    background: var(--dahlia); color: var(--egret);
+    font-weight: 600; font-size: 0.5625rem; letter-spacing: 0.14em;
+    padding: 6px 12px; border-radius: 999px;
+  }
+
+  /* ---------- final signup ---------- */
+  .final { padding: clamp(64px, 8vw, 120px) var(--pad); text-align: center; }
+  .final::before { content: ""; display: block; width: 40px; height: 1px; background: var(--gold); margin: 0 auto 28px; }
+  .final h2 {
+    font-family: var(--serif); font-weight: 500; color: var(--dahlia);
+    font-size: clamp(2rem, 3.8vw, 3.25rem); line-height: 1.1;
+    max-width: 14em; margin: 0 auto 28px;
+  }
+  .final .signup { max-width: 470px; margin: 0 auto; }
+  .final .fine { margin-top: 14px; }
+
+  /* ---------- footer ---------- */
+  footer {
+    background: var(--oxblood); color: var(--egret);
+    padding: 36px var(--pad);
+    display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  footer .wordmark { color: var(--egret); font-size: 1rem; display: block; }
+  footer small { display: block; margin-top: 8px; font-size: 0.6875rem; opacity: .85; }
+  footer nav { display: flex; gap: 22px; }
+  footer nav a {
+    font-weight: 500; font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  footer nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 900px) {
+    .top { justify-content: center; height: 76px; }
+    .top-link { display: none; }
+    h1 .ln { display: inline; white-space: normal; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero-copy { padding: 24px
